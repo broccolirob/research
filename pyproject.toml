@@ -12,6 +12,7 @@ dependencies = [
     "langchain-openai~=0.3.17",
     "python-dotenv~=1.1.0", # For managing environment variables like API keys
     "langchain-community~=0.3.24", # For community-provided integrations
+    "pytest>=8.1", # For running the test suite
 ]
 
 [project.optional-dependencies]
