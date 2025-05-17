@@ -1,0 +1,5 @@
+# Instructions
+- Use **Python 3.12** or newer for all development and examples.
+- Prefer `python` over other interpreters when running scripts.
+- Use `uv` for package management tasks instead of `pip`.
+- Example: run `uv pip install -e '.[test]'` to install test dependencies.
