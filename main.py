@@ -1,5 +1,11 @@
-def main():
-    print("Hello from research!")
+"""Command line entry point for the project."""
+
+from research import get_greeting
+
+
+def main() -> None:
+    """Run the application."""
+    print(get_greeting())
 
 
 if __name__ == "__main__":
