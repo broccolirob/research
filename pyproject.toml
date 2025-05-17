@@ -1,16 +1,57 @@
 [project]
-name = "research"
+name = "research-langchain-agent"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.12"
-dependencies = []
-
-[project.optional-dependencies]
-test = [
-    "pytest>=8.1",
-    "pytest-cov>=5.0",
+description = "AI Agent project using LangChain and uv."
+authors = [
+    {name = "Your Name", email = "your.email@example.com"},
+]
+requires-python = ">=3.9" # Langchain and its components generally require Python 3.9+
+license = {text = "MIT"}
+dependencies = [
+    "langchain-core~=0.3.60",
+    "langchain-openai~=0.3.17",
+    "python-dotenv~=1.1.0", # For managing environment variables like API keys
+    "langchain-community~=0.3.24", # For community-provided integrations
 ]
 
-[tool.pytest.ini_options]
-addopts = "-ra"
+[project.optional-dependencies]
+dev = [
+    "ruff", # For linting and formatting
+]
+
+[tool.uv]
+# uv specific configurations can go here if needed in the future.
+
+[tool.ruff]
+# Python version to target.
+target-version = "py39"
+line-length = 88
+indent-width = 4
+
+# For a more detailed ruff configuration, refer to: https://docs.astral.sh/ruff/configuration/
+# Example: Enable Flake8-bugbear (B) and PyLint (PLE, PLW) checks, ignore a specific rule
+# select = ["E", "F", "W", "B", "PLE", "PLW"]
+# ignore = ["E501"] # Example: ignore line too long if you have specific cases
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "F",  # Pyflakes
+    "W",  # pycodestyle warnings
+    "I",  # isort
+    "N",  # pep8-naming
+    "UP", # pyupgrade
+    "B",  # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "SIM",# flake8-simplify
+    "PTH",# flake8-use-pathlib
+    "RUF" # Ruff-specific rules
+]
+ignore = []
+
+[tool.ruff.format]
+# Options similar to Black
+# preview = true # Enable preview features if desired
+# indent-style = "space"
+# quote-style = "double"
+# skip-string-normalization = false
